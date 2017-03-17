@@ -14,9 +14,13 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-/* Course Category Finder Block
- * @author Tobias Kutzner, Igor Nesterow, Sandro Wilberg
+/**
+ * Course Category Finder Block
+ * @author Tobias Kutzner, Igor Nesterow
  */
-    $string['pluginname'] = 'Kurs Kategorie Suche';
-    $string['search_course_category'] = 'Kurs Kategorie Suche';
-    
+
+$string['pluginname'] = 'Kurs Kategorie Suche';
+$string['search_course_category'] = 'Kurs Kategorie Suche';
+$string['course'] = 'Kurs';
+$string['category'] = 'Kategorie';
+$string['found'] = 'Gefundene Kategorien: ';
