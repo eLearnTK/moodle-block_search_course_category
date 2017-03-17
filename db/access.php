@@ -14,14 +14,14 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-/* Course Category Finder Block
- * @author: Tobias Kutzner, Igor Nesterow, Sandro Wilberg
+/**
+ * Course Category Finder Block
+ * @author: Tobias Kutzner, Igor Nesterow
  */
 
 defined('MOODLE_INTERNAL') || die();
 
 $capabilities = array(
-
     'block/search_course_category:addinstance' => array(
 
         'captype' => 'write',
@@ -32,5 +32,14 @@ $capabilities = array(
         ),
 
         'clonepermissionsfrom' => 'moodle/site:manageblocks'
+    ),
+    'block/search_course_categor:myaddinstance' => array(
+        'riskbitmask'  => RISK_PERSONAL,
+        'captype'      => 'read',
+        'contextlevel' => CONTEXT_SYSTEM,
+        'archetypes'   => array(
+        'user' => CAP_ALLOW,
+        ),
+        'clonepermissionsfrom' => 'moodle/my:manageblocks'
     ),
 );
