@@ -14,21 +14,22 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-/* Course Category Finder Block
+/**
+ * Course Category Finder Block
  * This plugin enable the user to search courses on the LMS by entering the name of the course.
  * It searches the keywords in course names and course descriptions to generate the search list.
- * Course Category Finder is an extended version of the Course Finder Block. An Option is added to 
- * enable the user to search for categories as well as the courses. 
- * @package blocks
+ * Course Category Finder is an extended version of the Course Finder Block. An Option is added to
+ * enable the user to search for categories as well as the courses.
+ *
  * @author: Azmat Ullah, Talha Noor
  * @copyright  Copyrights © 2012 - 2013 | 3i Logic (Pvt) Ltd.
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- *
  */
+
+defined('MOODLE_INTERNAL') || die();
+
 class block_search_course_category extends block_base {
     public function init() {
-		//Title of the original block:
-        //$this->title = get_string('search_course', 'block_search_course');
         $this->title = get_string('search_course_category', 'block_search_course_category');
     }
     public function get_content() {
@@ -36,13 +37,18 @@ class block_search_course_category extends block_base {
         if ($this->content !== null) {
             return $this->content;
         }
+        $name = 'search_course_category';
         // Block Variable.
         $strgo      = get_string('go');
+        $co         = get_string('course', 'block_search_course_category');
+        $ca         = get_string('category', 'block_search_course_category');
         // Body of Block.
-        $this->content         =  new stdClass;
-		$this->content->text  .= '<form action="'.$CFG->wwwroot.'/blocks/search_course_category/search_course_category.php" method="post">';
-		//The combobox is added to choose the search option 
-		$this->content->text  .=  '<select id="searchform_combo" name="combo_option"><option value="course">Course</option> <option value="category">Category</option></select>';
+        $this->content         = new stdClass;
+        $this->content->text   = '';
+        $this->content->text  .= '<form action="'.$CFG->wwwroot.'/blocks/'.$name.'/'.$name.'.php" method="post">';
+        // The combobox is added to choose the search option.
+        $this->content->text  .= '<select id="searchform_combo" name="combo_option"><option value="course">'.$co.'</option>';
+        $this->content->text  .= '<option value="category">'.$ca.'</option></select>';
         $this->content->text  .= '<input id="searchform_search" name="search" type="text" size="20" />';
         $this->content->text  .= '<button id="searchform_button" type="submit" title="Search">'.$strgo.'</button><br/>';
         $this->content->text  .= '</form>';

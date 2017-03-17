@@ -14,15 +14,17 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-/* Course Category Finder Block
- * Course Category Finder is an extended version of the Course Finder Block. An Option is added to 
- * enable the user to search for categories as well as the courses. 
- * @package blocks
+/**
+ * Course Category Finder Block
+ * Course Category Finder is an extended version of the Course Finder Block. An Option is added to
+ * enable the user to search for categories as well as the courses.
  * @author: Tobias Kutzner, Igor Nesterow
  */
- 
-$plugin->version   = 2016120800;        // The current plugin version (Date: YYYYMMDDXX)
-$plugin->requires  = 2010112400;        // Requires this Moodle version
+
+defined('MOODLE_INTERNAL') || die();
+
+$plugin->version   = 2017030602;        // The current plugin version (Date: YYYYMMDDXX)
+$plugin->requires  = 2010112400;        // Requires this Moodle version.
 $plugin->release = '3.0';
 $plugin->component = 'block_search_course_category';
 $plugin->maturity = MATURITY_ALPHA;
