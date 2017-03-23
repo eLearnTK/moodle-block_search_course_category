@@ -15,8 +15,13 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
+ * Course Category Finder block caps.
+ *
  * Course Category Finder Block
- * @author: Tobias Kutzner, Igor Nesterow
+ *
+ * @package    block_search_course_category
+ * @copyright  Copyrights © 2016 - 2017 | BTU Cottbus-Senftenberg
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
