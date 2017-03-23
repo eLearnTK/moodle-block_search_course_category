@@ -16,14 +16,22 @@
 
 /**
  * Course Category Finder Block
+ *
  * Course Category Finder is an extended version of the Course Finder Block. An Option is added to
  * enable the user to search for categories as well as the courses.
- * @author: Tobias Kutzner, Igor Nesterow
+ *
+ * @package    block_search_course_category
+ * @copyright  Copyrights © 2016 - 2017 | BTU Cottbus-Senftenberg
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 require_once("../../config.php");
 require_once($CFG->dirroot.'/course/lib.php');
 require_once($CFG->libdir.'/coursecatlib.php');
+
+if ($CFG->forcelogin) {
+    require_login();
+}
 
 $option     = $_POST['combo_option'];
 $search     = optional_param('search', '', PARAM_RAW);  // Search words,
@@ -40,10 +48,6 @@ $usercatlist = coursecat::make_categories_list($capabilities);
 $search = trim(strip_tags($search)); // Trim & clean raw searched string.
 
 $site = get_site();
-
-if ($CFG->forcelogin) {
-    require_login();
-}
 
 if ($option == 'course') {
     $searchcriteria = array();

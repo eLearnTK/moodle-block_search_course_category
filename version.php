@@ -15,15 +15,20 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
+ * Version details
+ *
  * Course Category Finder Block
  * Course Category Finder is an extended version of the Course Finder Block. An Option is added to
  * enable the user to search for categories as well as the courses.
- * @author: Tobias Kutzner, Igor Nesterow
+ *
+ * @package    block_search_course_category
+ * @copyright  Copyrights © 2016 - 2017 | BTU Cottbus-Senftenberg
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2017030602;        // The current plugin version (Date: YYYYMMDDXX)
+$plugin->version   = 2017032300;        // The current plugin version (Date: YYYYMMDDXX)
 $plugin->requires  = 2010112400;        // Requires this Moodle version.
 $plugin->release = '3.0';
 $plugin->component = 'block_search_course_category';
