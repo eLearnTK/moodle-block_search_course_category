@@ -15,8 +15,13 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
+ * Strings for component 'block_search_course_category', language 'en'
+ *
  * Course Category Finder Block
- * @author Tobias Kutzner, Igor Nesterow
+ *
+ * @package    block_search_course_category
+ * @copyright  Copyrights © 2016 - 2017 | BTU Cottbus-Senftenberg
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 $string['pluginname'] = 'Course Category Finder';
