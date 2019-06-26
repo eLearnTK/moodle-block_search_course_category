@@ -50,9 +50,9 @@ version.php
 
 In dieser Datei ist die aktualle Versionsnummer des Blockes enthalten, als auch die  benötigte version von Moodle. 
 
-$plugin->version   = 2016120800;        
+$plugin->version   = 2019060600;        
 $plugin->requires  = 2010112400;        
-$plugin->release = '3.0';
+$plugin->release = '3.6';
 $plugin->component = 'block_search_course_category';
 
 
