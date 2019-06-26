@@ -28,14 +28,12 @@ defined('MOODLE_INTERNAL') || die();
 
 $capabilities = array(
     'block/search_course_category:addinstance' => array(
-
         'captype' => 'write',
         'contextlevel' => CONTEXT_BLOCK,
         'archetypes' => array(
             'editingteacher' => CAP_ALLOW,
             'manager' => CAP_ALLOW
         ),
-
         'clonepermissionsfrom' => 'moodle/site:manageblocks'
     ),
     'block/search_course_categor:myaddinstance' => array(
