@@ -19,7 +19,8 @@
  *
  * Course Category Finder Block
  * Course Category Finder is an extended version of the Course Finder Block. An Option is added to
- * enable the user to search for categories as well as the courses.
+ * enable the user to search for categories as well as the courses. Aditional search filter and sort
+ * filter is added to search courses by start date, end date, course format and completion criteria.
  *
  * @package    block_search_course_category
  * @copyright  Copyrights © 2016 - 2017 | BTU Cottbus-Senftenberg
@@ -28,8 +29,8 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2017032300;        // The current plugin version (Date: YYYYMMDDXX)
-$plugin->requires  = 2010112400;        // Requires this Moodle version.
-$plugin->release = '3.0';
+$plugin->version   = 2019060600;        // The current plugin version (Date: YYYYMMDDXX)
+$plugin->requires  = 2016120500;        // Requires this Moodle version (3.3).
+$plugin->release = '3.6';
 $plugin->component = 'block_search_course_category';
-$plugin->maturity = MATURITY_ALPHA;
+$plugin->maturity = MATURITY_STABLE;

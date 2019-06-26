@@ -25,7 +25,7 @@ defined('MOODLE_INTERNAL') || die();
  * Course Category Finder is an extended version of the Course Finder Block. An Option is added to
  * enable the user to search for categories as well as the courses.
  *
- * @package    block_search_course_category
+ * @package    search_course_category
  * @copyright  Copyrights © 2016 - 2017 | BTU Cottbus-Senftenberg
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -44,25 +44,32 @@ class block_search_course_category extends block_base {
      * @return object $this->content
      */
     public function get_content() {
+
         global $CFG, $OUTPUT;
         if ($this->content !== null) {
             return $this->content;
         }
-        $name = 'search_course_category';
-        // Block Variable.
-        $strgo      = get_string('go');
-        $co         = get_string('course', 'block_search_course_category');
-        $ca         = get_string('category', 'block_search_course_category');
+
+        // Read language strings.
+        $strsearch = get_string('search', 'block_search_course_category');
+        $strcourse = get_string('course', 'block_search_course_category');
+        $strcategory = get_string('category', 'block_search_course_category');
+        $strsummary = get_string('summary', 'block_search_course_category');
+
         // Body of Block.
         $this->content         = new stdClass;
         $this->content->text   = '';
-        $this->content->text  .= '<form action="'.$CFG->wwwroot.'/blocks/'.$name.'/'.$name.'.php" method="post">';
+        $this->content->text  .= '<form action="'.$CFG->wwwroot.'/blocks/search_course_category/view.php">';
         // The combobox is added to choose the search option.
-        $this->content->text  .= '<select id="searchform_combo" name="combo_option"><option value="course">'.$co.'</option>';
-        $this->content->text  .= '<option value="category">'.$ca.'</option></select>';
+        $this->content->text  .= '<select id="searchform_combo" name="combo_option">';
+        $this->content->text  .= '<option value="course">' . $strcourse . '</option>';
+        $this->content->text  .= '<option value="category">' . $strcategory . '</option>';
+        $this->content->text  .= '<option value="summary">'. $strsummary .'</option>';
+        $this->content->text  .= '</select>';
         $this->content->text  .= '<input id="searchform_search" name="search" type="text" size="20" />';
-        $this->content->text  .= '<button id="searchform_button" type="submit" title="Search">'.$strgo.'</button><br/>';
+        $this->content->text  .= '<button id="searchform_button" type="submit" title="Search">' . $strsearch . '</button><br/>';
         $this->content->text  .= '</form>';
+
         return $this->content;
     }
 }
