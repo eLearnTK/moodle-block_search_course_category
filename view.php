@@ -55,6 +55,8 @@ $form->display();
 $courserenderer = $PAGE->get_renderer('core', 'course');
 
 if ($fromform = $form->get_data()) {
+    // search term to lowercase to allow case-insensitive search
+    $fromform->search = strtolower($fromform->search);
     if ($fromform->combo_option == 'course') {
         $content = $courserenderer->courses_list(search_courses_by_name($fromform), true);
     }
@@ -66,7 +68,7 @@ if ($fromform = $form->get_data()) {
     }
 } else {
     $initialsearch = new stdClass();
-    $initialsearch->search = $search;
+    $initialsearch->search = strtolower($search);
     if ($option == 'course') {
         $content = $courserenderer->courses_list(search_courses_by_name($initialsearch), true);
     }

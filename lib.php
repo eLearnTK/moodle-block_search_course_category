@@ -68,7 +68,7 @@ function search_courses_by_name($fromform) {
     // Search all courses except the frontpage (where category = 0).
     $searchquery = "SELECT id
                     FROM {course}
-                    WHERE fullname LIKE '%" . $fromform->search . "%' AND category != 0";
+                    WHERE LOWER(fullname) LIKE '%" . $fromform->search . "%' AND category != 0";
     // Apply filters.
     $searchquery .= search_filter($fromform);
     // Get courses from database.
@@ -81,7 +81,7 @@ function search_courses_by_summary($fromform) {
     // Search all courses except the frontpage (where category = 0).
     $searchquery = "SELECT id
                     FROM {course}
-                    WHERE summary LIKE '%" . $fromform->search . "%' AND category != 0";
+                    WHERE LOWER(summary) LIKE '%" . $fromform->search . "%' AND category != 0";
     // Apply filters.
     $searchquery .= search_filter($fromform);
     // Get courses from database.
