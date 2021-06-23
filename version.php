@@ -23,14 +23,14 @@
  * filter is added to search courses by start date, end date, course format and completion criteria.
  *
  * @package    block_search_course_category
- * @copyright  Copyrights © 2016 - 2017 | BTU Cottbus-Senftenberg
+ * @copyright  Copyrights © 2016 - 2021 | BTU Cottbus-Senftenberg
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2019060600;        // The current plugin version (Date: YYYYMMDDXX)
+$plugin->version   = 2021062300;        // The current plugin version (Date: YYYYMMDDXX)
 $plugin->requires  = 2016120500;        // Requires this Moodle version (3.3).
-$plugin->release = '3.6';
+$plugin->release = '3.7';
 $plugin->component = 'block_search_course_category';
 $plugin->maturity = MATURITY_STABLE;
